@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+     
+    
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="js/ng-cordova.js"> </script>
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="starter" ng-controller="MainController">
+
+    <ion-pane>
+
+    
+    <ion-header-bar class="has-tabs-top bar-positive" ><h4 class="text">Cômodos - Casa</h4></ion-header-bar>
+    
+
+
+
+
+        
+      <ion-content>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="position tabs-striped tabs-top tabs-background-positive tabs-color-light">
+    <div class="tabs">
+      <a ng-click="myVar='tab-item active '" ng-class="myVar" class="tab-item active" href="index.html">
+        
+        Home
+      </a>
+      <a ng-click="myVar='tab-item active'" ng-class="myVar" class="tab-item"  href="Manual.html">
+        
+        Modo Manual
+      </a>
+    
+    </div>
+  </div>
+   
+    
+   
+
+     <ul class="list">
+
+ <ion-toggle ng-model="quarto1" toggle-class="toggle-assertive"><b>Quarto 1</b></ion-toggle>
+    <ion-toggle ng-model="quarto2" toggle-class="toggle-royal"><b>Quarto 2</b></ion-toggle>
+    <ion-toggle ng-model="sala" toggle-class="toggle-energized"><b>Sala</b></ion-toggle>
+    <ion-toggle ng-model="cozinha" toggle-class="toggle-balanced"><b>Cozinha</b></ion-toggle>
+    <ion-toggle ng-model="banheiro" toggle-class="toggle-calm"><b>Banheiro</b></ion-toggle>
+    <ion-toggle ng-model="quintal" toggle-class="toggle-dark"><b>Quintal</b></ion-toggle>
+    
+
+
+
+</ul>
+
+
+
+
+ 
+
+      </ion-content>
+    </ion-pane>
+  </body>
+</html>

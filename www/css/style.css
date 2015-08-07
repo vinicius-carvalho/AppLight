@@ -1,0 +1,31 @@
+/* Empty. Add your own CSS if you like */
+
+.text{
+
+color:white;
+font-family: monospace;
+
+
+}
+
+.myVar{
+	color:white;
+
+}
+
+.position{
+position: relative;
+top: -164px;
+
+}
+
+.cortextoOn{
+	color:#33FF33;
+
+
+}
+.cortextoOff{
+	color:red;
+
+
+}

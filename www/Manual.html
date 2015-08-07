@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+     
+      <script src="js/ng-cordova.js"> </script>
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+
+  </head>
+  <body ng-app="starter" ng-controller="MainController">
+
+    <ion-pane>
+     <ion-header-bar class="has-tabs-top bar-dark" ><h4 class="text">Modo Manual</h4></ion-header-bar>
+        
+      
+      <ion-content>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="position tabs-striped tabs-top tabs-background-dark tabs-color-light">
+    <div class="tabs">
+      <a ng-click="myVar='tab-item active '" ng-class="myVar" class="tab-item" href="index.html">
+        
+        Home
+      </a>
+      <a ng-click="myVar='tab-item active'" ng-class="myVar" class="tab-item active"  href="Manual.html">
+        
+        Modo Manual
+      </a>
+    
+    </div>
+  </div>
+  {{bluetoothEnable}}
+  <ul class="list">
+
+    <ion-toggle ng-model="mquarto1"  toggle-class="toggle-assertive"><span ng-if="mquarto1" class="cortextoOn"><b>{{msquarto1="ON"}}</b></span><span ng-if="!mquarto1" class="cortextoOff"><b>{{msquarto1="OFF"}}</b> </span> <b>- Quarto 1</b></ion-toggle>
+
+    <ion-toggle ng-model="mquarto2" toggle-class="toggle-royal"><span ng-if="mquarto2" class="cortextoOn"><b>{{msquarto2="ON"}}</b></span><span ng-if="!mquarto2" class="cortextoOff"><b>{{msquarto2="OFF"}}</b> </span> <b>- Quarto 2</b></ion-toggle>
+
+    <ion-toggle ng-model="msala" toggle-class="toggle-energized"><span ng-if="msala" class="cortextoOn"><b>{{mssala="ON"}}</b></span><span ng-if="!msala" class="cortextoOff"><b>{{mssala="OFF"}}</b> </span> <b>- Sala</b></ion-toggle>
+
+    <ion-toggle ng-model="mcozinha" toggle-class="toggle-balanced"><span ng-if="mcozinha" class="cortextoOn"><b>{{mscozinha="ON"}}</b></span><span ng-if="!mcozinha" class="cortextoOff"><b>{{mscozinha="OFF"}}</b> </span> <b>- Cozinha</b></ion-toggle>
+
+    <ion-toggle ng-model="mbanheiro" toggle-class="toggle-calm"><span ng-if="mbanheiro" class="cortextoOn"><b>{{msbanheiro="ON"}}</b></span><span ng-if="!mbanheiro" class="cortextoOff"><b>{{msbanheiro="OFF"}}</b> </span> <b>- Banheiro</b></ion-toggle>
+
+    <ion-toggle ng-model="mquintal" toggle-class="toggle-dark"><span ng-if="mquintal" class="cortextoOn"><b>{{msquintal="ON"}}</b></span><span ng-if="!mquintal" class="cortextoOff"><b>{{msquintal="OFF"}}</b> </span> <b>- Quintal</b></ion-toggle>
+  
+</ul>
+
+
+
+
+
+     <!-- <ul class="list">
+
+   <li class="item item-checkbox">
+     <label class="checkbox checkbox-assertive">
+       <input type="checkbox">
+     </label>
+     OFF - Quarto 1 
+  </li>
+
+   <li class="item item-checkbox">
+     <label class="checkbox checkbox-royal">
+       <input type="checkbox">
+     </label>
+     OFF - Quarto 2
+  </li>
+
+    <li class="item item-checkbox">
+     <label class="checkbox checkbox-energized">
+       <input type="checkbox">
+     </label>
+     OFF - Sala 
+  </li>
+
+   <li class="item item-checkbox">
+     <label class="checkbox checkbox-balanced">
+       <input type="checkbox">
+     </label>
+    OFF - Cozinha
+  </li>
+
+   <li class="item item-checkbox">
+     <label class="checkbox checkbox-calm">
+       <input type="checkbox">
+     </label>
+     OFF - Banheiro 
+  </li>
+
+   <li class="item item-checkbox">
+     <label class="checkbox checkbox-dark">
+       <input type="checkbox">
+     </label>
+     OFF - Quintal 
+  </li> -->
+
+</ul>
+
+
+
+
+
+
+
+
+ 
+
+      </ion-content>
+    </ion-pane>
+  </body>
+</html>
