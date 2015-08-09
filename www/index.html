@@ -19,7 +19,8 @@
     
 
     <!-- cordova script (this will be a 404 during development) -->
-    <script src="js/ng-cordova.js"> </script>
+    
+    <script src="js/ng-cordova.min.js"> </script>
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
@@ -50,15 +51,23 @@
         
         Home
       </a>
-      <a ng-click="myVar='tab-item active'" ng-class="myVar" class="tab-item"  href="Manual.html">
-        
+
+      <a ng-click="list()" class="tab-item"  href="Manual.html">
         Modo Manual
       </a>
     
     </div>
   </div>
+  <center>
+    <input type="button" class="button button-positive" ng-click="bluetooth()" value="Ativar Bluetooth">
+    <input type="button" class="button button-balanced"ng-click="conectar()" value="Conectar com a casa">
+   </center>
+   <br>
+   <br>
+  <center><h3 class="textpr">Cômodos participando do modo automático!</h3></center>
    
-    
+    <br>
+    <br>
    
 
      <ul class="list">

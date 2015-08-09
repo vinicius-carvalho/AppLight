@@ -17,17 +17,18 @@
 
     <!-- cordova script (this will be a 404 during development) -->
      
-      <script src="js/ng-cordova.js"> </script>
+      <script src="js/ng-cordova.min.js"> </script>
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
 
   </head>
-  <body ng-app="starter" ng-controller="MainController">
+  <body ng-app="starter" ng-controller="MainController2">
+
 
     <ion-pane>
-     <ion-header-bar class="has-tabs-top bar-dark" ><h4 class="text">Modo Manual</h4></ion-header-bar>
+     <ion-header-bar class="has-tabs-top bar-dark" ><h4 class="text">Modo Manual - Casa</h4></ion-header-bar>
         
       
       <ion-content>
@@ -38,9 +39,12 @@
 <br>
 <br>
 
+<div>
+
+</div>
 <div class="position tabs-striped tabs-top tabs-background-dark tabs-color-light">
     <div class="tabs">
-      <a ng-click="myVar='tab-item active '" ng-class="myVar" class="tab-item" href="index.html">
+      <a class="tab-item" href="index.html">
         
         Home
       </a>
@@ -51,10 +55,19 @@
     
     </div>
   </div>
-  {{bluetoothEnable}}
+
+
+
+ 
+  <center><h3 class="textpr">Aperte no botão para acender ou apagar uma lâmpada !</h3></center>
+  <br>
+   <br>
+<span ng-if="myVar='tab-item active'"></span>
+
+
   <ul class="list">
 
-    <ion-toggle ng-model="mquarto1"  toggle-class="toggle-assertive"><span ng-if="mquarto1" class="cortextoOn"><b>{{msquarto1="ON"}}</b></span><span ng-if="!mquarto1" class="cortextoOff"><b>{{msquarto1="OFF"}}</b> </span> <b>- Quarto 1</b></ion-toggle>
+    <ion-toggle ng-model="mquarto1"  toggle-class="toggle-assertive"><span ng-if="mquarto1" class="cortextoOn"><b>{{msquarto1="ON"}}{{envQuarto1on()}}</b></span><span ng-if="!mquarto1" class="cortextoOff"><b>{{msquarto1="OFF"}}{{envQuarto1off()}}</b> </span> <b>- Quarto 1</b></ion-toggle>
 
     <ion-toggle ng-model="mquarto2" toggle-class="toggle-royal"><span ng-if="mquarto2" class="cortextoOn"><b>{{msquarto2="ON"}}</b></span><span ng-if="!mquarto2" class="cortextoOff"><b>{{msquarto2="OFF"}}</b> </span> <b>- Quarto 2</b></ion-toggle>
 
