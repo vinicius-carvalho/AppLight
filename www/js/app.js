@@ -30,40 +30,12 @@ app.controller('MainController', function($scope, $ionicLoading,$cordovaBluetoot
 
 
 
-  $scope.quarto1=true;
-  $scope.quarto2=true;
-  $scope.sala=true;
-  $scope.cozinha=true;
-  $scope.banheiro=true;
-  $scope.quintal=true;
-
-
-
-//Modo manual
-
-  $scope.mquarto1= false;
-  $scope.mquarto2=false;
-  $scope.msala=false;
-  $scope.mcozinha=false;
-  $scope.mbanheiro=false;
-  $scope.mquintal=false;
-
-
-
-
-
-
-
-$scope.msquarto1="OFF";
-$scope.msquarto2="OFF";
-$scope.mssala="OFF";
-$scope.mscozinha="OFF";
-$scope.msbanheiro="OFF";
-$scope.msquintal="OFF";
-
-
-
-
+$scope.quarto= false;
+  $scope.quarto2=false;
+  $scope.sala=false;
+  $scope.cozinha=false;
+  $scope.banheiro=false;
+  $scope.quintal=false;
  
  $scope.bluetooth = function(){
 
@@ -84,7 +56,7 @@ $scope.msquintal="OFF";
 
 $scope.envQuarto1on=function(){
 
-    $cordovaBluetoothSerial.write('b').then(function(){
+    $cordovaBluetoothSerial.write('k').then(function(){
       
     },function(){
       alert("Falha");
@@ -93,7 +65,26 @@ $scope.envQuarto1on=function(){
   }
 
 $scope.envQuarto1off=function(){
-$cordovaBluetoothSerial.write('g').then(function(){
+$cordovaBluetoothSerial.write('l').then(function(){
+      
+    },function(){
+      alert("Falha");
+    });
+
+  }
+
+  $scope.modAutoq1on=function(){
+$cordovaBluetoothSerial.write('n').then(function(){
+      
+    },function(){
+      alert("Falha");
+    });
+
+  }
+
+  $scope.modAutoq1off=function(){
+
+$cordovaBluetoothSerial.write('m').then(function(){
       
     },function(){
       alert("Falha");
@@ -110,64 +101,142 @@ $scope.list=function(){
 }
 
 $scope.q1=function(){
- $scope.mquarto1= true;
+ $scope.quarto= true;
 
 }
+
+$scope.qq1=function(){
+ $scope.quarto= false;
+
+}
+
 
 $scope.q2=function(){
- $scope.mquarto2= true;
+ $scope.quarto2= true;
 
 }
+
+$scope.qq2=function(){
+ $scope.quarto2= false;
+
+}
+
+
 $scope.s1=function(){
- $scope.msala= true;
+ $scope.sala= true;
 
 }
+$scope.ss1=function(){
+ $scope.sala= false;
+
+}
+
 $scope.c1=function(){
- $scope.mcozinha= true;
+ $scope.cozinha= true;
 
 }
+
+$scope.cc1=function(){
+ $scope.cozinha= false;
+
+}
+
 $scope.b1=function(){
- $scope.mbanheiro= true;
+ $scope.banheiro= true;
 
 }
+
+$scope.bb1=function(){
+ $scope.banheiro= false;
+
+}
+
 $scope.q3=function(){
- $scope.mquintal= true;
+ $scope.quintal= true;
+
+}
+
+$scope.qq3=function(){
+ $scope.quintal= false;
 
 }
 
 
-  $scope.showConfirm = function() {
-  $scope.mver= false;
-  $scope.mquarto2=false;
-  $scope.msala=false;
-  $scope.mcozinha=false;
-  $scope.mbanheiro=false;
-  $scope.mquintal=false;
-   var confirmPopup = $ionicPopup.confirm({
-     title: 'Consume Ice Cream',
+  
+
+$scope.showConf=function(){
+
+  $scope.quarto= false;
+  $scope.quarto2=false;
+  $scope.sala=false;
+  $scope.cozinha=false;
+  $scope.banheiro=false;
+  $scope.quintal=false;
+
+var confirmPopup1 = $ionicPopup.confirm({
+     title: 'Selecione os cômodos que irão participar',
      template: '<ul class="list">'+
 
-                '<ion-checkbox ng-model="mver"><b>Quarto 1 </b><span ng-if="mver">{{q1()}}</span></ion-checkbox>'+
-                '<ion-checkbox ng-model="mquarto2"><b>Quarto 2</b><span ng-if="mquarto2">{{q2()}}</span></ion-checkbox>'+
-                '<ion-checkbox ng-model="msala"><b>Sala</b><span ng-if="msala">{{s1()}}</span></ion-checkbox>'+
-                '<ion-checkbox ng-model="mcozinha"><b>Cozinha</b><span ng-if="mcozinha">{{c1()}}</span></ion-checkbox>'+
-                '<ion-checkbox ng-model="mbanheiro" ><b>Banheiro</b><span ng-if="mbanheiro">{{b1()}}</span></ion-checkbox>'+
-                '<ion-checkbox ng-model="mquintal"><b>Quintal</b><span ng-if="mquintal">{{q3()}}</span></ion-checkbox>'+
+                '<ion-checkbox ng-model="quarto"><b>Quarto 1 </b><span ng-if="quarto">{{q1()}}</span><span ng-if="!quarto">{{qq1()}}</span></ion-checkbox>'+
+                '<ion-checkbox ng-model="quarto2"><b>Quarto 2</b><span ng-if="quarto2">{{q2()}}</span><span ng-if="!quarto2">{{qq2()}}</span></ion-checkbox>'+
+                '<ion-checkbox ng-model="sala"><b>Sala</b><span ng-if="sala">{{s1()}}</span><span ng-if="!sala">{{ss1()}}</span></ion-checkbox>'+
+                '<ion-checkbox ng-model="cozinha"><b>Cozinha</b><span ng-if="cozinha">{{c1()}}</span><span ng-if="!cozinha">{{cc1()}}</span></ion-checkbox>'+
+                '<ion-checkbox ng-model="banheiro" ><b>Banheiro</b><span ng-if="banheiro">{{b1()}}</span><span ng-if="!banheiro">{{bb1()}}</span></ion-checkbox>'+
+                '<ion-checkbox ng-model="quintal"><b>Quintal</b><span ng-if="quintal">{{q3()}}</span><span ng-if="!quintal">{{qq3()}}</span></ion-checkbox>'+
 
                 '</ul>',
-                scope:$scope
+                scope:$scope,
+         
    });
-   confirmPopup.then(function(res) {
+   confirmPopup1.then(function(res) {
+    
      if(res) {
-       console.log('You are sure');
-       $scope.envQuarto1on();
+      
+
+       
      } else {
-       console.log('You are not sure');
-       $scope.envQuarto1off();
+
+ $scope.quarto= false;
+  $scope.quarto2=false;
+  $scope.sala=false;
+  $scope.cozinha=false;
+  $scope.banheiro=false;
+  $scope.quintal=false;
 
      }
    });
+
+};
+
+
+  $scope.showConfirm = function() {
+
+   var confirmPopup = $ionicPopup.confirm({
+     title: 'Modo automático',
+     template: "Desejar selecionar quais cômodos deverão participar?",
+                scope:$scope,
+       
+   });
+
+   confirmPopup.then(function(res) {
+     if(res) {
+      $scope.showConf();
+      console.log("apetou sim");
+      
+     } else {
+      $scope.quarto= true;
+  $scope.quarto2= true;
+  $scope.sala= true;
+  $scope.cozinha= true;
+  $scope.banheiro= true;
+  $scope.quintal= true;
+     
+     }
+
+   });
  };
+
+  setTimeout($scope.showConfirm(),1000);
 
   
 

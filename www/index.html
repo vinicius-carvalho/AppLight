@@ -64,7 +64,7 @@
    </center>
    <br>
    <br>
-  <center><h3 class="textpr">Cômodos participando do modo automático!</h3></center>
+  <center><h3 class="textpr">Cômodos que estão participando do modo automático!</h3></center>
    
     <br>
     <br>
@@ -72,19 +72,24 @@
 
      <ul class="list">
 
- <ion-toggle ng-model="quarto1" toggle-class="toggle-assertive"><b>Quarto 1</b></ion-toggle>
-    <ion-toggle ng-model="quarto2" toggle-class="toggle-royal"><b>Quarto 2</b></ion-toggle>
-    <ion-toggle ng-model="sala" toggle-class="toggle-energized"><b>Sala</b></ion-toggle>
-    <ion-toggle ng-model="cozinha" toggle-class="toggle-balanced"><b>Cozinha</b></ion-toggle>
-    <ion-toggle ng-model="banheiro" toggle-class="toggle-calm"><b>Banheiro</b></ion-toggle>
-    <ion-toggle ng-model="quintal" toggle-class="toggle-dark"><b>Quintal</b></ion-toggle>
-    
+ <ion-toggle ng-model="quarto"  toggle-class="toggle-assertive"><span ng-if="quarto"><b ng-hide='true'>{{modAutoq1on()}}</b></span><span ng-if="!quarto" ><b ng-hide='true'>{{modAutoq1off()}}</b> </span> <b> Quarto 1</b></ion-toggle>
 
+    <ion-toggle ng-model="quarto2" toggle-class="toggle-royal"><span ng-if="!quarto2"> </span> <b> Quarto 2</b></ion-toggle>
+
+    <ion-toggle ng-model="sala" toggle-class="toggle-energized"><span ng-if="!sala"> </span> <b>Sala</b></ion-toggle>
+
+    <ion-toggle ng-model="cozinha" toggle-class="toggle-balanced"><span ng-if="!cozinha"><b></b> </span> <b>Cozinha</b></ion-toggle>
+
+    <ion-toggle ng-model="banheiro" toggle-class="toggle-calm"><span ng-if="!banheiro"><b> </b> </span> <b>Banheiro</b></ion-toggle>
+
+    <ion-toggle ng-model="quintal" toggle-class="toggle-dark"><span ng-if="!quintal"><b> </b> </span> <b>Quintal</b></ion-toggle>
 
 
 </ul>
 
-
+<br>
+<br>
+<br>
 
 
  
